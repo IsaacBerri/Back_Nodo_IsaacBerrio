@@ -6,6 +6,6 @@ public class Multiplicacion extends Operaciones {
     @Override
     public void operar(){
         int resultado = num1 * num2;
-        System.out.println("La multiplicacion entre el numero " + super.num1 + " y el numero " + super.num2 + " es: " + resultado);
+        System.out.println("La multiplicacion entre el numero " + num1 + " y el numero " + num2 + " es: " + resultado);
     }
 }
