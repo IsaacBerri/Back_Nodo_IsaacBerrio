@@ -8,6 +8,7 @@ public class Main {
         int option = 0;
         double num1;
         double num2;
+        String rutaArchivo = "C:\\Games\\number.txt";
 
         do {
             try {
@@ -16,7 +17,8 @@ public class Main {
                         "2. Resta \n" +
                         "3. Multiplicacion \n" +
                         "4. Divicion \n" +
-                        "5. Potenciacion \n");
+                        "5. Potenciacion \n" +
+                        "6. Leer archivo");
                 option = sc.nextInt();
                 switch (option){
                     case 1:
@@ -56,8 +58,17 @@ public class Main {
                         }
                         break;
                     case 5:
+                        System.out.println("Ingrese el primer numero: ");
+                        num1 = sc.nextDouble();
+                        System.out.println("Ingrese el segundo numero: ");
+                        num2 = sc.nextDouble();
                         Potencia pow = new Potencia(num1, num2);
                         pow.operar();
+                        break;
+                    case 6:
+                        LeerArchivo leer = new LeerArchivo();
+                        leer.setRuta(rutaArchivo);
+                        leer.mostarArchivo();
                         break;
                     default:
                         System.out.println("La opcion numero " + option + " no esta disponible");
@@ -66,6 +77,6 @@ public class Main {
             }catch (InputMismatchException e){
                 System.out.println("Ingresaste texto en vez de numeros");
             }
-        }while (option > 5);
+        }while (option > 6);
     }
 }
